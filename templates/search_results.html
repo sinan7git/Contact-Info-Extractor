@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+        .result h2 {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+        .result a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .result a:hover {
+            text-decoration: underline;
+        }
+        .result p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results for "{{ search_query }}"</h1>
+
+        {% for result in results %}
+            <div class="result">
+                <h2><a href="{{ result.website_url }}">{{ result.website_url }}</a></h2>
+                <a href="{{ result.contact_link }}">Contact Us</a>
+                {% if result.phone_number %}
+                    <p>Phone: {{ result.phone_number }}</p>
+                {% endif %}
+                <p>Emails: {{ result.emails }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
