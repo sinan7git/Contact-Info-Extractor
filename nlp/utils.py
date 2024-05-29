@@ -8,7 +8,7 @@ from.helper import find_company_name,find_phone_number,find_emails
 nlp = spacy.load("en_core_web_sm")
 nlp.max_length = 2000000
 def google_search(query):
-    api_key = "AIzaSyAndynKbOK3aBHSx-SCpCtcSQL75K6j5mA"
+    api_key = "{api_key}"
     search_engine_id = "d2883230e495947c5"
     base_url = "https://www.googleapis.com/customsearch/v1"
 
