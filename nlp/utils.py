@@ -9,7 +9,7 @@ nlp = spacy.load("en_core_web_sm")
 nlp.max_length = 2000000
 def google_search(query):
     api_key = "{api_key}"
-    search_engine_id = "d2883230e495947c5"
+    search_engine_id = "{serch_engine_id}"
     base_url = "https://www.googleapis.com/customsearch/v1"
 
     query_params = {
